@@ -7,10 +7,10 @@ script:
 - docker login --username=$DOCKER_USER --password=$DOCKER_PASS
 - export SRC=`pwd`
 - cd $SRC/debian7base/
-- travis_wait docker build -q -t deanrock/server-manager:debian7base .
+- travis_wait 40 docker build -q -t deanrock/server-manager:debian7base .
 - docker push deanrock/server-manager:debian7base
 - cd $SRC/debian8base/
-- travis_wait docker build -q -t deanrock/server-manager:debian8base .
+- travis_wait 40 docker build -q -t deanrock/server-manager:debian8base .
 - docker push deanrock/server-manager:debian8base
 env:
   global:
